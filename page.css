@@ -4,23 +4,12 @@ background-color:#D2B48C;
 
 header {
 	background-color: #F5DEB3;
-	width:1850px;
+	width:100%;
 	height:300px;
-}
-
-h1 {
-	font-family:fantasy;
-	text-decoration:underline;
-	font-size: 40px;
 }
 
 h2 {
 	text-decoration:underline;
-}
-
-.p1{
-	position:left;
-	font-size: 20px;
 }
 
 #img1{
@@ -32,41 +21,9 @@ h2 {
 	border: 3px black groove;
 }
 
-.Tarifmois {
-	position:left;
-	border : 3px red outset;
-	border-radius:10px;
-	box-shadow: 6px 6px 6px red;
-	width:210px;
-	height:150px;
-	border-collapse: collapse;
-	display:inline-block;
-}
-
-.Tarifan {
-	position:absolute;
-	border : 3px red outset;
-	border-radius:10px;
-	box-shadow: 6px 6px 6px red;
-	left:250px;
-	width:125px;
-	border-collapse: collapse;
-	display:inline-block;
-}
-
-td, th
-{
-    border: 1px solid black; 
-}
-
 nav {
 	text-align: center;
 	font-size: 30px;
-}
-
-li {
-	display: inline;
-	margin: 5px;
 }
 
 li a {
@@ -75,8 +32,6 @@ li a {
 	padding: 2px 5px;
 	text-decoration: none;
 	color: black;
-	font-weight: bold;
-	background: #F5DEB3;
 	border-radius:10px;
 } 
 
@@ -86,61 +41,6 @@ li a:hover {
 	font-style: italic;
 }
 
-.Annabac {
-	display: inline;
-	position: absolute;
-}
-
-#ana1:hover, #ana2:hover, #ana3:hover, #ana4:hover {
-	opacity: 0.6;
-}
-
-input, textarea {
-	width: 150px;
-	padding: 4px;
-	vertical-align: top;
-}
-
-#sujet { width: 250px; }
-textarea {
-	width: 300px;
-	height: 5em;
-}
-
-label {
-	display: inline-block;
-	width: 100px;
-	margin-right: 20px;
-	vertical-align: top;
-	text-align: right;
-}
-
-.fb {
-	position:absolute;
-	right:30px;
-	top:2590px;
-	width:292px;
-	color:blue;
-	font-size: 25px;
-}
-
-.fb2 {
-	position:absolute;
-	right:60px;
-	top:2650px;
-	width:292px;
-	font-size: 25px;
-}
-
-.yt {
-	position:absolute;
-	left:400px;
-	top:2580px;
-	width:292px;
-	color:red;
-	font-size: 25px;
-}
-
-#fb {
-	width:300px
+li {
+	right:50px;
 }
