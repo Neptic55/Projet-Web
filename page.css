@@ -18,3 +18,10 @@ min-height:60vh;
  border-style:solid;
  border-color:black;
 }
+
+#color {
+	background-color:#0065a7;
+	 border-width:3px;
+	border-style:solid;
+	border-color:black;
+}
