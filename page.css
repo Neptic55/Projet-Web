@@ -19,7 +19,7 @@ min-height:60vh;
  border-color:black;
 }
 
-#color {
+#activite, #boutique, #contact, #reseau {
 	background-color:#0065a7;
 	 border-width:3px;
 	border-style:solid;
