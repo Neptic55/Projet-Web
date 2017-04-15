@@ -1,13 +1,20 @@
 body {
-background-color:#D2B48C;
-}
-
-header {
-	background-color: #F5DEB3;
-	width:100%;
-	position:fixed;
+background-color:#0065a7;
 }
 
 #img1 {
 	width:300px;
+}
+
+#leheader {
+background-color:#004975;
+position:
+}
+
+#navigation {
+background-color:#004975;
+min-height:60vh;
+ border-width:3px;
+ border-style:solid;
+ border-color:black;
 }
