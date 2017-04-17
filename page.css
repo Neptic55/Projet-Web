@@ -15,7 +15,7 @@ z-index: 1;
 
 #navigation {
 background-color:#004975;
-min-height:60vh;
+min-height:67vh;
  border-width:3px;
  border-style:solid;
  border-color:black;
@@ -27,4 +27,10 @@ min-height:60vh;
 	 border-width:3px;
 	border-style:solid;
 	border-color:black;
+}
+
+#photo {
+	 background-image: url("img/couverture.png");
+	 background-repeat: no-repeat;
+	 background-position: right;
 }
