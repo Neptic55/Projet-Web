@@ -3,7 +3,8 @@ background-color:#0065a7;
 }
 
 #img1 {
-	width:300px;
+	width:280px;
+	 padding : 0;
 }
 
 #leheader {
@@ -18,6 +19,7 @@ min-height:60vh;
  border-width:3px;
  border-style:solid;
  border-color:black;
+ padding : 0;
 }
 
 #activite, #boutique, #contact, #reseau {
