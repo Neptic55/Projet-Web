@@ -34,3 +34,7 @@ min-height:67vh;
 	 background-repeat: no-repeat;
 	 background-position: right;
 }
+
+.panel-body {
+	list-style-type:none;
+}
