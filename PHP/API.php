@@ -6,6 +6,8 @@ include_once 'config.php';
 
 interface model
 {
+    public function __construct($idMember, $name, $surname, $email, $role, $password, $permissionLevel, $avatar);
+    public function comActivityDisplay($idActivity);
 }
 
 class userModel implements model
@@ -29,5 +31,19 @@ class userModel implements model
         $this->password = $password;
         $this->permissionLevel = $permissionLevel;
         $this->avatar = $avatar;
+    }
+
+    public function comActivityDisplay($idActivity)     //display Activity comments
+    {
+        $PDO = singleton::getInstance();
+        $rawresult = $PDO->query("SELECT * FROM comActivity WHERE idActivity = $idActivity");
+
+        $comments = []; //create all comments array
+        foreach ($rawresult as $line) {
+            $newObject = new self($line['idCom'], $line['idMember'], $line['dateCom'], $line['commentary']);
+            $newObject->id = $rawresult['id'];
+            array_push($comments, $newObject);
+        }
+        return $comments;
     }
 }
