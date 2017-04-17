@@ -8,7 +8,8 @@ background-color:#0065a7;
 
 #leheader {
 background-color:#004975;
-position:
+position: float;
+z-index: 1;
 }
 
 #navigation {
