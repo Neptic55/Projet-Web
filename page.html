@@ -6,6 +6,9 @@
     <link href="page.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="bootstrap-3.3.7/dist/css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet"  href="{{ asset('css/shopHome.css')}}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -20,21 +23,21 @@ include_once 'errors.php';
 
 	<div class="container-fluid">
 		<div class="row" id="leheader">
-			<img src="img\BDE CESI.jpg" alt="identite" class="col-md-1" id="img1">
+			<img src="img\BDE CESI.jpg" alt="identite" class="col-md-2" id="img1">
 			
-			<nav class="col-md-2">
+			<nav class="col-lg-offset-1 col-md-1">
 				<a href="#activite"><h1>Activités</h1></a>
 				<a href="#boutique"><h1>Boutique</h1></a>
 				<a href="#reseau"><h1>Réseaux sociaux</h1></a>
 			</nav>
-			<nav class="col-md-3">
+			<nav class="col-lg-offset-1 col-md-1">
 				<a href="#photo"><h1>Photos</h1></a>
 				<a href="#contact"><h1>Nous contacter</h1></a>
 			</nav>
 			
-			<div class="col-md-4" id="connexion">
+			<div class="col-lg-offset-3 col-md-3" id="connexion">
 				<form class="form-horizontal" role="form" method="post">
-				<h2 class="col-md-offset-4 col-md-4">Connexion</h2>
+				<h2 class="col-md-offset-6 col-md-3">Connexion</h2>
 					<div class="form-group">
 						<label for="inputEmail3" class="col-sm-6 control-label">Email</label>
 						<div class="col-md-6">
@@ -162,13 +165,13 @@ include_once 'errors.php';
 					  </div>
 					</div>
 					<div class="item">
-					  <img src="img/sweat.jpg" alt="sweat">
+					  <img src="img/sweat.jpg" alt="sweat" width=536  height=659>
 					  <div class="carousel-caption">
 					  <h3>Sweat</h3>
 					  </div>
 					</div>
 					<div class="item">
-					  <img src="img/pull.jpg" alt="pull">
+					  <img src="img/pull.jpg" alt="pull" width=536  height=659>
 					  <div class="carousel-caption">
 					  <h3>Pull</h3>
 					  </div>
