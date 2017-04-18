@@ -1,6 +1,6 @@
 <?php
 
-function alert ($message){
+function alert($message){
 
     exit('<script>'.alert($message).'</script>');
 }
