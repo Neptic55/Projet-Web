@@ -25,6 +25,7 @@ include_once 'errors.php';
 		<div class="row" id="leheader">
 			<img src="img\logo.png" alt="identite" class="col-md-2" id="img1">
 			
+			
 			<nav class="col-lg-offset-1 col-md-1">
 				<a href="#activite"><h1>Activités</h1></a>
 				<a href="#boutique"><h1>Boutique</h1></a>
@@ -119,26 +120,24 @@ include_once 'errors.php';
 			<h2>Photos</h2>
 			</nav>
 			<section class="col-lg-offset-1 col-md-2">
-			<button type="button" class="btn btn-primary">Voir toutes les photos</button>
+			<button type="button" class="btn"><a href="album.html">Voir toutes les photos</a></button>
 			</section>
 			<section class="col-lg-offset-1 col-md-3">
 			Vous pouvez voir tout les photos en cliquant sur le bouton de gauche et ajouter des photos avec un choix d'album en cliquant sur le bouton de droite
 			</section>
 			<section class="col-lg-offset-1 col-md-2">
-			<div class="dropup">
-				<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-				Menu déroulant
-				<span class="caret"></span>
-				</button>
-				<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-				<li><a href="#" title="Lien 1">Lien 1</a></li>
-				<li><a href="#" title="Lien 2">Lien 2</a></li>
-				<li><a href="#" title="Lien 3">Lien 3</a></li>
-				<li role="separator" class="divider"></li>
-				<li><a href="#" title="Lien 4">Lien 4</a></li>
-				</ul>
-			</div>
-				<button type="button" class="btn btn-primary">Ajouter photos</button>
+				<form method="post" action="reception.php" enctype="multipart/form-data">
+					 <label for="icone">Icône du fichier (JPG, PNG ou GIF | max. 15 Ko) :</label><br />
+					 <input type="file" name="icone" id="icone" /><br />
+					 <label for="mon_fichier">Fichier (tous formats | max. 1 Mo) :</label><br />
+					 <input type="hidden" name="MAX_FILE_SIZE" value="1048576" />
+					 <input type="file" name="mon_fichier" id="mon_fichier" /><br />
+					 <label for="titre">Titre du fichier (max. 50 caractères) :</label><br />
+					 <input type="text" name="titre" value="Titre du fichier" id="titre" /><br />
+					 <label for="description">Description de votre fichier (max. 255 caractères) :</label><br />
+					 <textarea name="description" id="description"></textarea><br />
+					<input type="submit" name="submit" value="Envoyer" />
+				</form>
 			</section>
 		</div>
 		
@@ -190,7 +189,7 @@ include_once 'errors.php';
 				</div>
 			</section>
 			<section class="col-lg-offset-2 col-md-1">		
-				<button type="button" class="btn btn-primary">Accès Boutique</button>		
+				<button type="button" class="btn"><a href="boutique.html">Accès Boutique</a></button>		
 			</section>
 		</div>
 		
