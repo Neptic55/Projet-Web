@@ -69,6 +69,11 @@ include_once 'PHP\deconnexion.php';
 						</div>
 					</div>
 				</form>
+				<?php if (md5($data['password']) == md5($_POST['password'])) ?>
+					  Ceci sera affiché si l'expression est vrai.
+				<?php else: ?>
+					  Sinon, ceci sera affiché.
+				<?php endif; ?>
 			</div>
 		</div>
 
