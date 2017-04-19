@@ -5,7 +5,8 @@ include_once  'API.php';
 include_once 'errors.php';
 
 
-    session_start();
+
+    $_SESSION['id']="";
     $id=$_SESSION['id'];
 
     if ($id!=0) alert('Vous êtes déja connecté');
@@ -14,21 +15,26 @@ include_once 'errors.php';
     }
     else {
         $PDO = singleton::getInstance();
-        $query = $PDO->prepare("SELECT * FROM members WHERE email = :email");
-        $query->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
-        $query->execute();
+        $query = $PDO->prepare("SELECT * FROM members WHERE email = :email");   //va chercher l'enregistrement
+        $query->execute(array(':email'=> $_POST['email']));
 
         $data = $query->fetch();
-        if ($data['password'] == md5($_POST['password'])) {      //Connecté
+        if (md5($data['password']) == md5($_POST['password'])) {      //Connecté
             $_SESSION['username'] = $data['name'] . $data['surname'];
             $_SESSION['permissionLevel'] = $data['permissionLevel'];
             $_SESSION['id'] = $data['idMember'];
             $_SESSION['avatar'] = $data['avatar'];
             alert("Vous êtes bien connecté avec le compte $_SESSION[username]");
+            $_SESSION['id']=1;
+        
+        echo "<script>document.location.href='../page.php'     </script>";
+
+
 
 
         } else {
             alert("Erreur durant l'authentification, mail ou mot de passe incorrect");
         } //erreur
         $query->CloseCursor();
-}
+        }
+
