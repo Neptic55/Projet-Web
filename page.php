@@ -45,7 +45,7 @@ include_once 'PHP\errors.php';
 <?php
 if($_SESSION['id'] == 0){
 	echo "<div class=' col-md-4' id='connexion'>
-				<form class='form-horizontal' role='form' method='post' action='PHP/connexion.php'  style='color: white;'>
+				<form class='form-horizontal' role='form' method='post' action='PHP/connexion.php'>
 				<h2 class='col-md-offset-6 col-md-3'>Connexion</h2>
 					<div class='form-group'>
 						<label for='inputEmail3' class='col-sm-6 control-label'>Email</label>
@@ -124,7 +124,7 @@ if($_SESSION['id'] == 0){
 				</div>
 			</div>
 			</section>
-			<section class="col-md-3" style='color: white;'>
+			<section class="col-md-3" style='color: black;'>
 			<h3>Proposition d'activités</h3>
 			<form action="PHP/proposition.php" method="post" name="ideaForm">
 				
