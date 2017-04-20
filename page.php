@@ -1,4 +1,8 @@
+<?php 
+	session_start();
+	?>
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -69,15 +73,13 @@ include_once 'PHP\errors.php';
 
 				<button type="submit" class="btn btn-default"><a href="inscription.php">S'inscrire</a></button>
 
-				<form class="form-horizontal" action="PHP\deconnexion.php">
-				<button type="button" class="btn btn-default">Deconnexion</button>
+				<form class="form-horizontal" role="form" action="PHP\deconnexion.php">
+				<button type="submit" class="btn btn-default">Deconnexion</button>
 				</form>
 
 
-
-
-			<?php if ($_SESSION['id'] == 0){ echo "<p> DECONNECTE  </p>";}
-				else{ echo "<img src='img/sphere.png'>";}
+			<?php if ($_SESSION['id'] == 0)	{ echo "<img src='img/reddot.jpg'>";}	//IMAGE CO/DECO
+				else{ echo "<img src='img/greendot.png'>";}
 			?>
 
 
@@ -135,25 +137,16 @@ include_once 'PHP\errors.php';
 			<h2>Photos</h2>
 			</nav>
 			<section class="col-lg-offset-1 col-md-2">
-			<button type="button" class="btn"><a href="album.html">Voir toutes les photos</a></button>
+			<button type="button" class="btn"><a href="album.php">Voir toutes les photos</a></button>
 			</section>
 			<section class="col-lg-offset-1 col-md-3">
 			Vous pouvez voir tout les photos en cliquant sur le bouton de gauche et ajouter des photos avec un choix d'album en cliquant sur le bouton de droite
 			</section>
 			<section class="col-lg-offset-1 col-md-2">
-				<!-- Debut du formulaire -->
-				<form enctype="multipart/form-data" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-					<fieldset>
-						<legend>Formulaire</legend>
-						  <p>
-							<label for="fichier_a_uploader" title="Recherchez le fichier à uploader !">Envoyer le fichier :</label>
-							<input type="hidden" name="MAX_FILE_SIZE" value="<?php echo MAX_SIZE; ?>" />
-							<input name="fichier" type="file" id="fichier_a_uploader" />
-							<input type="submit" name="submit" value="Uploader" />
-						  </p>
-					  </fieldset>
+				<form method="post" action="PHP/recupPhoto.php" enctype="multipart/form-data" name="picture">
+					<input type="file" name="img"/>
+					<input type="submit" name="Envoyer"/>
 				</form>
-				<!-- Fin du formulaire -->
 			</section>
 		</div>
 		
