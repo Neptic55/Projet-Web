@@ -115,12 +115,12 @@ if($_SESSION['id'] == 0){
 			<div class="panel panel-default" id="decal6">
 				<div class="panel-heading">Liste d'activités</div>
 				<div class="panel-body">
-				<li> <a href="pagebasket.html">Basket</a></li>
-				<li> <a href="pagepeinture.html">Peinture</a></li>
-				<li> <a href="pagecinéma.html">Cinéma</a></li>
-				<li> <a href="pagefootball.html">Football</a></li>
-				<li> <a href="pagemusique.html">Musique</a></li>
-				<li> <a href="pagejeux.html">Jeux-vidéos</a></li>
+				<li> <a href="construct.php">Basket</a></li>
+				<li> <a href="construct.php">Peinture</a></li>
+				<li> <a href="construct.php">Cinéma</a></li>
+				<li> <a href="construct.php">Football</a></li>
+				<li> <a href="construct.php">Musique</a></li>
+				<li> <a href="construct.php">Jeux-vidéos</a></li>
 				</div>
 			</div>
 			</section>
