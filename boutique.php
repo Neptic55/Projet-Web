@@ -20,11 +20,11 @@ include_once 'PHP\config.php';
 					<li class="caddie"><a href="#">Caddie</a></li>
 					<li class="items">
 						Items
-						<span>13</span>
+						<span>0</span>
 					</li>
 					<li class="total">
 						TOTAL
-						<span>1320.09 $</span>
+						<span>0.0 €</span>
 					</li>
 				</ul>
 			</div>

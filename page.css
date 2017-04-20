@@ -4,7 +4,7 @@ background-color:#0065a7;
 
 #img1 {
 	width:280px;
-	padding : 0;
+	 padding : 0;
 }
 
 #leheader {
@@ -13,13 +13,15 @@ position: float;
 z-index: 1;
 }
 
-#navigation {
-background-color:#004975;
-min-height:51vh;
- border-width:3px;
- border-style:solid;
- border-color:black;
- padding : 0;
+#navigation1, #navigation2, #navigation3, #navigation4, #navigation5 {
+	background-color:#004975;
+	min-height: 60vh;
+ 	border-left: 3px;
+	border-top: 3px;
+ 	border-style:solid;
+ 	border-color:black;
+ 	padding-left : 0;
+ 	color: white;
 }
 
 #activite, #boutique, #contact, #reseau {
@@ -33,10 +35,16 @@ min-height:51vh;
 	 background-image: url("img/couverture.png");
 	 background-repeat: no-repeat;
 	 background-position: right;
-	 width:auto;
 }
 
 .panel-body {
 	list-style-type:none;
 }
 
+#decal1, #decal2, #decal3, #decal4, #decal5, #decal6, #decal7, #decal8, #decal9, #decal10{
+	margin-top: 20px;
+}
+
+#reseau{
+	color: black;
+}

@@ -6,7 +6,7 @@ include_once  'API.php';
 include_once 'errors.php';
 
 
-    if (!isset($_SESSION['id'])){
+    if (!isset($_SESSION['id'])){   //première connexion
         $_SESSION['id']="";
     }
 
@@ -18,6 +18,7 @@ include_once 'errors.php';
     else{
         if (empty($_POST['email']) || empty($_POST['password'])){   //oubli de champ
             alert("Un ou plusieurs champs sont vides");
+            echo "<script>document.location.href='../page.php'     </script>";
         }
         else {
             $PDO = singleton::getInstance();
@@ -28,7 +29,7 @@ include_once 'errors.php';
             if (md5($data['password']) == md5($_POST['password'])) {      //Connecté
                 $_SESSION['username'] = $data['name'] . $data['surname'];
                 $_SESSION['permissionLevel'] = $data['permissionLevel'];
-                $_SESSION['id'] = $data['idMember'];
+                $_SESSION['idMember'] = $data['idMember'];
                 $_SESSION['avatar'] = $data['avatar'];
                 alert("Vous êtes bien connecté avec le compte $_SESSION[username]");
                 $_SESSION['id']=1;
@@ -40,6 +41,7 @@ include_once 'errors.php';
 
             } else {
                 alert("Erreur durant l'authentification, mail ou mot de passe incorrect");
+                echo "<script>document.location.href='../page.php'     </script>";
             } //erreur
             $query->CloseCursor();
         }
