@@ -220,7 +220,7 @@ if($_SESSION['id'] == 0){
 			<h2>Nous contacter</h2>
 			</nav>
 			<section class="col-lg-offset-1 col-md-5">
-			<form action="/ma-page-de-traitement" method="post" class="text-center" id="decal8">
+			<form action="construct.php" method="post" class="text-center" id="decal8">
 				<div>
 					<label for="nom">Nom :</label>
 					<input type="text" id="nom" />
