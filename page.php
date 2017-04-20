@@ -45,7 +45,7 @@ include_once 'PHP\errors.php';
 <?php
 if($_SESSION['id'] == 0){
 	echo "<div class=' col-md-4' id='connexion'>
-				<form class='form-horizontal' role='form' method='post' action='PHP/connexion.php'>
+				<form class='form-horizontal' role='form' method='post' action='PHP/connexion.php'  style='color: white;'>
 				<h2 class='col-md-offset-6 col-md-3'>Connexion</h2>
 					<div class='form-group'>
 						<label for='inputEmail3' class='col-sm-6 control-label'>Email</label>
@@ -124,7 +124,7 @@ if($_SESSION['id'] == 0){
 				</div>
 			</div>
 			</section>
-			<section class="col-md-3">
+			<section class="col-md-3" style='color: white;'>
 			<h3>Proposition d'activités</h3>
 			<form action="PHP/proposition.php" method="post" name="ideaForm">
 				
@@ -220,7 +220,7 @@ if($_SESSION['id'] == 0){
 			<h2>Nous contacter</h2>
 			</nav>
 			<section class="col-lg-offset-1 col-md-5">
-			<form action="construct.php" method="post" class="text-center" id="decal8">
+			<form action="construct.php" method="post" class="text-center" id="decal8" style='color: white;'>
 				<div>
 					<label for="nom">Nom :</label>
 					<input type="text" id="nom" />
@@ -252,13 +252,13 @@ if($_SESSION['id'] == 0){
 			</section>
 		</div>
 		 
-		<footer class="row" id="reseau">
+		<footer class="row" id="reseau" style='color: white;'>
 			<section class="col-md-1" id="navigation5">
 				<h2>Réseaux Sociaux</h2>
 			</section>
 			<section class="col-md-6">
 				Réseaux Sociaux
-				<div class="fb2"><p> Pour accéder à notre page fb clique<a href="https://www.facebook.com/BDECesiLyon/?fref=ts">ici</a> ou sur l'image !</p>
+				<div class="fb2"><p> Pour accéder à notre page fb clique<a href="https://www.facebook.com/BDECesiLyon/?fref=ts" >ici</a> ou sur l'image !</p>
 				<a href="https://www.facebook.com/BDECesiLyon/?fref=ts"><img src="img\Facebook.png" alt="identite" id="fb" width=50%></a></div>
 			</section>
 			<section class="col-md-5">
