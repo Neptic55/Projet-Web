@@ -40,42 +40,55 @@ include_once 'PHP\errors.php';
 				<a href="#contact"><h1>Nous contacter</h1></a>
 			</nav>
 			
-			<div class="col-lg-offset-3 col-md-3" id="connexion">
-				<form class="form-horizontal" role="form" method="post" action="PHP/connexion.php">
-				<h2 class="col-md-offset-6 col-md-3">Connexion</h2>
-					<div class="form-group">
-						<label for="inputEmail3" class="col-sm-6 control-label">Email</label>
-						<div class="col-md-6">
-						<input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="email">
+<?php
+if($_SESSION['id'] == 0){
+	echo "<div class='col-lg-offset-3 col-md-3' id='connexion'>
+				<form class='form-horizontal' role='form' method='post' action='PHP/connexion.php'>
+				<h2 class='col-md-offset-6 col-md-3'>Connexion</h2>
+					<div class='form-group'>
+						<label for='inputEmail3' class='col-sm-6 control-label'>Email</label>
+						<div class='col-md-6'>
+						<input type='email' class='form-control' id='inputEmail3' placeholder='Email' name='email'>
 						</div>
 					</div>
-					<div class="form-group">
-						<label for="inputPassword3" class="col-sm-6 control-label">Mot de passe</label>
-						<div class="col-sm-6">
-						  <input type="password" class="form-control" id="inputPassword3" placeholder="Password" name="password">
+					<div class='form-group'>
+						<label for='inputPassword3' class='col-sm-6 control-label'>Mot de passe</label>
+						<div class='col-sm-6'>
+						  <input type='password' class='form-control' id='inputPassword3' placeholder='Password' name='password'>
 						</div>
 					</div>
-					<div class="form-group">
-						<div class="col-sm-offset-6 col-sm-6">
-						  <div class="checkbox">
+					<div class='form-group'>
+						<div class='col-sm-offset-6 col-sm-6'>
+						  <div class='checkbox'>
 							<label>
-							  <input type="checkbox"> Se souvenir de moi
+							  <input type='checkbox'> Se souvenir de moi
 							</label>
 						  </div>
 						</div>
 					</div>
-					<div class="form-group">
-						<div class="col-sm-offset-6 col-sm-6">
-						  <button type="submit" class="btn btn-default">Connexion</button>
+					<div class='form-group'>
+						<div class='col-sm-offset-6 col-sm-6'>
+						  <button type='submit' class='btn btn-default'>Connexion</button>
 						</div>
 					</div>
 				</form>
 
-				<button type="submit" class="btn btn-default"><a href="inscription.php">S'inscrire</a></button>
-
-				<form class="form-horizontal" role="form" action="PHP\deconnexion.php">
-				<button type="submit" class="btn btn-default">Deconnexion</button>
+				<button type='submit' class='btn btn-default'><a href='inscription.php'>S'inscrire</a></button>"
+;}
+?>
+			<?php	
+			if ($_SESSION['id'] == 1) {
+							echo "
+			<div class='col-lg-offset-3 col-md-3' id='connexion'>
+				<form class='form-horizontal' role='form' action='PHP\deconnexion.php'>
+				<button type='submit' class='btn btn-default'>Deconnexion</button>
 				</form>
+			</div>
+			";
+			}
+
+
+			?>
 
 
 			<?php if ($_SESSION['id'] == 0)	{ echo "<img src='img/reddot.jpg'>";}	//IMAGE CO/DECO
