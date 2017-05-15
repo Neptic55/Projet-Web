@@ -133,9 +133,8 @@ if($_SESSION['id'] == 0){
 				<input type="text" name="ideaTitle"/>
 				
 
-				<p>Message
-				</p>
-					<input type="text" name="idea"/>
+				<p>Message</p>
+				<input type="text" name="idea"/>
 				
 				
 				<div class="button">
