@@ -14,7 +14,19 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
+	<?php
+		if(isset($_POST['submit_commentaire'])){
+			if(isset($_POST['pseudo'],$_POST['commentaire']) AND !empty($_POST['pseudo']) AND !empty($_POST['commentaire'])) {
+				$pseudo=htmlspecialchars($_POST['pseudo']);
+				$commentaire=htmlspecialchars($_POST['commentaire']);
+			} else {
+				$c_erreur = "Tous les champs doivent être complétés";
+			}
+		}
 	
+	
+	
+	?>
 		<body>
 		<div class="container-fluid">
 			<div class="row" id="leheader">
@@ -22,9 +34,14 @@
 			</div>
 			<div class="row">
 			</div>
-			<button type="button" class="btn" id="decal1">J'aime</button>
+				<button type="button" class="btn" id="decal1">J'aime</button>
 			<div class="row">
-
+				<h2>Commentaire :</h2>
+				<form method="POST">
+					<input type="text" name="pseudo" placeholder="Votre pseudo"/>
+					<textarea name="commentaire" placeholder="Votre commentaire"></textarea>
+					<input type="submit" value="Poster mon commentaire" name="submit_commentaire" />
+				</form>
 			</div>
 		</div>
 		</body>
