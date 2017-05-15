@@ -6,33 +6,29 @@
 	 <link href="zoombox/zoombox.css" rel="stylesheet" type="text/css" media="screen" />
 	</head>
 	<body>
-<?php
-$dos = "albums/general/miniature/";
-$dir = opendir($dos);
-while ($file = readdir($dir)){
-    $allow_ext = array("jpg",'png','gif','jpeg');
-    $ext = strtolower(substr($file,-3));
-
-}
-?>
-
-	<div class="miniature">
-
 		<?php
-		$liste = array();
-			opendir('albums/general/miniature/');
-			for($i=0; $f=readdir(); $i++){
-				$liste[$i] = $f ;
-			} 
+		$dos = "albums/general/miniature/";
+		$dir = opendir($dos);
+		while ($file = readdir($dir)){
+			$allow_ext = array("jpg",'png','gif','jpeg');
+			$ext = strtolower(substr($file,-3));
 
-			foreach ($liste as $photo) {
-				echo "<img src='albums/general/miniature/$photo' /> ";
-				}
+		}
 		?>
 
+		<a href="Photo.php"><div class="miniature">
 
+			<?php
+			$liste = array();
+				opendir('albums/general/miniature/');
+				for($i=0; $f=readdir(); $i++){
+					$liste[$i] = $f ;
+				} 
 
-
-	</div>
+				foreach ($liste as $photo) {
+					echo "<img src='albums/general/miniature/$photo' /> ";
+					}
+			?>
+		</div></a>
 	</body>
 </html>
