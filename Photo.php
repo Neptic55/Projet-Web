@@ -2,6 +2,9 @@
 <html lang="fr">
 
 	<head>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="zoombox/zoombox.js"></script>
+	<link href="zoombox/zoombox.css" rel="stylesheet" type="text/css" media="screen" />
 	<meta charset="UTF-8">
     <link href="page.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -21,6 +24,7 @@
 			</div>
 			<button type="button" class="btn" id="decal1">J'aime</button>
 			<div class="row">
+
 			</div>
 		</div>
 		</body>
