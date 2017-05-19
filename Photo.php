@@ -33,6 +33,9 @@
 				<img src="img\logo.jpg" alt="identite" class="col-lg-offset-5 col-md-5" id="img1">
 			</div>
 			<div class="row">
+			<?php
+			$_GET['varname']
+			?>
 			</div>
 				<button type="button" class="btn" id="decal1">J'aime</button>
 			<div class="row">

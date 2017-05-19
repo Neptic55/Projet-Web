@@ -29,7 +29,7 @@
 		}
 		?>
 
-		<a href="Photo.php" id="clique"><div class="miniature">
+		<a href="Photo.php?varname=$variable" id="clique"><div class="miniature">
 
 			<?php
 			$liste = array();
