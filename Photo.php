@@ -15,17 +15,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<?php
+	$bdd = new PDO('mysql:host=127.0.0.1;dbname=projetbde;charset=utf/','root','');
+	
+	if(isset($_GET['id']) and !empty($_GET['id'])) {
+		
+		$getid=htmlspecialchars($_GET['id']);
+		
+		$article = $bdd->prepare('SELECT * FROM projetbde WHERE id=?');
+		$article->execute(array($getid));
+		$article = $article->fetch();
+		
 		if(isset($_POST['submit_commentaire'])){
 			if(isset($_POST['pseudo'],$_POST['commentaire']) AND !empty($_POST['pseudo']) AND !empty($_POST['commentaire'])) {
 				$pseudo=htmlspecialchars($_POST['pseudo']);
 				$commentaire=htmlspecialchars($_POST['commentaire']);
+				
+				if(strlen($pseudo) < 25) {
+					$ins = $bdd->prepare('INSERT INTO commentaire(pseudo, commentaire, id_article) VALUES (?,?,?)');
+					$ins->execute(array($pseudo,$commentaire,$getid));
+					$c_msg = "<span style='color:green'> Votre commentaire a bien été posté </span>";
+				} else {
+				$c_msg = "Erreur : Le pseudo doit faire moins de 25 caractères";
+				}
 			} else {
-				$c_erreur = "Tous les champs doivent être complétés";
+				$c_msg = "Erreur : Tous les champs doivent être complétés";
 			}
 		}
-	
-	
-	
+		
+		$commentaire = $bdd->prepare('SELECT * FROM commentaire WHERE id_article = ? ORDER BY id DESC');
+		$commentaire->execute(array($getid));
+	}
 	?>
 		<body>
 		<div class="container-fluid">
@@ -37,7 +56,8 @@
 			$_GET['varname']
 			?>
 			</div>
-				<button type="button" class="btn" id="decal1">J'aime</button>
+				<button type="button" class="btn"><a href=PHP/action.php?t=1&id=<?= $id ?>J'aime</a></button>
+				<button type="button" class="btn"><a href=PHP/action.php?t=2&id=<?= $id ?>Je n'aime pas</a></button>
 			<div class="row">
 				<h2>Commentaire :</h2>
 				<form method="POST">
@@ -45,7 +65,11 @@
 					<textarea name="commentaire" placeholder="Votre commentaire"></textarea>
 					<input type="submit" value="Poster mon commentaire" name="submit_commentaire" />
 				</form>
+				<?php if(isset($c_msg)) {echo $c_msg; } ?>
 			</div>
+			<?php while($c = $commentaire->fetch()) { ?>
+				<b><?= $c['pseudo']?>:</b> <?= $c['commentaire']?><br />
+			<?php } ?>
 		</div>
 		</body>
 		
