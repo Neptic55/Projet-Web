@@ -1,5 +1,6 @@
 <?php
-$bdd = new PDO('mysql:host=127.0.0.1;dbname=projetbde;charset=utf/','root','');
+include_once 'singleton.php';
+$PDO = singleton::getInstance();
 
 if(isset($_GET['t'],$_GET['id'] AND !empty($_GET['t'] AND !empty($_GET['id'])) {
 	$getid = (int) $_GET['id'];

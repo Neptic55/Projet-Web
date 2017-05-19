@@ -15,7 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<?php
-	$bdd = new PDO('mysql:host=127.0.0.1;dbname=projetbde;charset=utf/','root','');
+	include_once 'singleton.php';
+	$PDO = singleton::getInstance();
 	
 	if(isset($_GET['id']) and !empty($_GET['id'])) {
 		
@@ -24,6 +25,14 @@
 		$article = $bdd->prepare('SELECT * FROM projetbde WHERE id=?');
 		$article->execute(array($getid));
 		$article = $article->fetch();
+		
+		$likes = $bdd->prepare('SELECT id FROM likes WHERE id_article = ?');
+		$likes->execute(array($id));
+		$likes = $likes->rowCount();
+		
+		$dislikes = $bdd->prepare('SELECT id FROM dislikes WHERE id_article = ?');
+		$dislikes->execute(array($id));
+		$dislikes = $dislikes->rowCount();
 		
 		if(isset($_POST['submit_commentaire'])){
 			if(isset($_POST['pseudo'],$_POST['commentaire']) AND !empty($_POST['pseudo']) AND !empty($_POST['commentaire'])) {
@@ -56,8 +65,8 @@
 			$_GET['varname']
 			?>
 			</div>
-				<button type="button" class="btn"><a href=PHP/action.php?t=1&id=<?= $id ?>J'aime</a></button>
-				<button type="button" class="btn"><a href=PHP/action.php?t=2&id=<?= $id ?>Je n'aime pas</a></button>
+				<button type="button" class="btn"><a href="PHP/action.php?t=1&id=<?= $id ?>">J'aime</a>(<?= $likes ?>)</button>
+				<button type="button" class="btn"><a href="PHP/action.php?t=2&id=<?= $id ?>">Je n'aime pas</a>(<?= $dislikes ?>)</button>
 			<div class="row">
 				<h2>Commentaire :</h2>
 				<form method="POST">
