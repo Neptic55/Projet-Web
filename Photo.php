@@ -16,6 +16,8 @@
 	</head>
 
 	<?php
+		include_once 'PHP/singleton.php';
+		$PDO = singleton::getInstance();
 	
 	if(isset($_GET['id']) and !empty($_GET['id'])) {
 		
