@@ -9,7 +9,7 @@ final class singleton{
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
     );
 
-    private function __construct(){
+    private function __construct($dsn, $username, $password, $options){
     }
 
     public static function getInstance(){

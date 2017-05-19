@@ -14,9 +14,8 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
+
 	<?php
-	include_once 'singleton.php';
-	$PDO = singleton::getInstance();
 	
 	if(isset($_GET['id']) and !empty($_GET['id'])) {
 		
